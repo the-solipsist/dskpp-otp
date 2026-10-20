@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) 2026 Pranesh Prakash
 # Build harness.jar, the tiny dex that runs the installed app's DSKPP client.
 #
 # Requirements:

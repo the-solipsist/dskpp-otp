@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
+// Copyright (C) 2026 Pranesh Prakash
+
 import com.nexusgroup.personal.sdk.java.crypto.CryptoHashes;
 import com.nexusgroup.personal.sdk.java.otp.SDKOTPProvisioningProfile;
 import com.nexusgroup.personal.sdk.java.otp.dskpp.DskppActivation;

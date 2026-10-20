@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
+# Copyright (C) 2026 Pranesh Prakash
 """Provision a Nexus Personal DSKPP OTP profile into a standard otpauth URI.
 
 This is a provisioning-time interoperability tool.  It does not read an

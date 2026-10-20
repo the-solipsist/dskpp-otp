@@ -249,6 +249,7 @@ harness/
   src/Harness.java        # calls the installed SDK's DskppActivation
   stubs/                  # compile-time API stubs (no implementation)
 PROTOCOL.md
+NOTICE
 LICENSE
 ```
 
@@ -257,5 +258,9 @@ The harness jar contains only the `Harness` class. It refers to the SDK's
 
 ## License
 
-MIT for this repository's code and documentation. No SDK, APK, bank code, or
-user data is included or redistributed. See [NOTICE](NOTICE).
+Copyright (C) 2026 Pranesh Prakash.
+
+The code and documentation in this repository are licensed under the GNU
+General Public License, version 3 or later (GPL-3.0-or-later). The full text
+is in [LICENSE](LICENSE). No SDK, APK, bank code, or user data is included or
+redistributed. See [NOTICE](NOTICE).

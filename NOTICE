@@ -1,6 +1,13 @@
-NOTICE
+dskpp-otp
+Copyright (C) 2026 Pranesh Prakash
+
+Licensed under the GNU General Public License, version 3 or later
+(GPL-3.0-or-later). See LICENSE for the full text.
+
+---
 
 This repository contains only original code and protocol documentation.
+The only third-party text is the verbatim GNU GPL v3 license in LICENSE.
 
 It does not contain or redistribute the Nexus Personal SDK, any banking app,
 APK, split APK, decompiled code, activation URL, PIN, seed, profile data, or
