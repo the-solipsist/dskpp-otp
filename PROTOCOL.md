@@ -2,7 +2,7 @@
 
 This document describes the interoperability surface used by `dskpp-otp`.
 It is based on observing a Nexus Personal SDK-based app performing its normal
-provisioning flow. It contains **no SDK code**, no bank code, no APK and no
+provisioning flow. It contains no SDK code, no bank code, no APK and no
 credentials. The proprietary `DskppActivation` class is not reimplemented
 here; the reference harness delegates to the copy already installed on the
 user's device.
@@ -24,7 +24,7 @@ Two details matter:
 
 - `u` is the provisioning user identifier and `ac` is the single-use
   activation code.
-- The `ac` parameter is frequently **outside** the `oath_url` value (the outer
+- The `ac` parameter is frequently outside the `oath_url` value (the outer
   query), because `&` terminates the `oath_url` value. It must be appended to
   the inner URL before the SDK sees it.
 
@@ -110,7 +110,7 @@ key packages and the four-pass protocol variant.
 ## 4. Key schedule
 
 The shared key is derived only from values that the client and server both
-know; **no device identifier enters the key derivation**.
+know. No device identifier enters the key derivation.
 
 Observed parameters:
 
@@ -140,7 +140,7 @@ avoids that by invoking the SDK.
 The seed is delivered by the server inside the PSKC key package, encrypted
 under the PIN-derived key. Anyone who holds the activation URL (including its
 single-use code) and the activation PIN can perform the exchange. That is why
-this tool is a **provisioning-time** tool.
+the tool therefore only works at provisioning time.
 
 After the profile exists, the app stores it in a SQLCipher database whose
 passphrase is sealed by an AndroidKeyStore key. The seed itself is additionally
@@ -164,13 +164,13 @@ profiles; Aegis, FreeOTP, 2FAS, KeePassXC and recent Google Authenticator can.
 
 ## 7. Reference harness
 
-`harness/Harness.java` is intentionally minimal:
+`harness/Harness.java` is small:
 
 1. read the activation URL and PIN from files (never argv, to keep them out of
    `ps`);
 2. rewrite the scheme to `com.nexusgroup.dskpp` if needed;
 3. construct `DskppActivation` and call `sdkOTPProvisioningProfile()`;
-4. write the seed **before** reading any other profile field;
+4. write the seed before reading any other profile field;
 5. write metadata via reflection (so a changed SDK getter cannot prevent the
    seed from being saved).
 
@@ -187,11 +187,11 @@ installed APK and reach the network; no root is involved.
 
 ## 8. References
 
-- [RFC 6063 — DSKPP (Key Provisioning)](https://datatracker.ietf.org/doc/html/rfc6063)
-- [RFC 6030 — PSKC](https://datatracker.ietf.org/doc/html/rfc6030)
-- [RFC 4226 — HOTP](https://datatracker.ietf.org/doc/html/rfc4226)
-- [RFC 6238 — TOTP](https://datatracker.ietf.org/doc/html/rfc6238)
-- [RFC 2898 — PBKDF2](https://datatracker.ietf.org/doc/html/rfc2898)
+- [RFC 6063: DSKPP (Key Provisioning)](https://datatracker.ietf.org/doc/html/rfc6063)
+- [RFC 6030: PSKC](https://datatracker.ietf.org/doc/html/rfc6030)
+- [RFC 4226: HOTP](https://datatracker.ietf.org/doc/html/rfc4226)
+- [RFC 6238: TOTP](https://datatracker.ietf.org/doc/html/rfc6238)
+- [RFC 2898: PBKDF2](https://datatracker.ietf.org/doc/html/rfc2898)
   (obsoleted by [RFC 8018](https://datatracker.ietf.org/doc/html/rfc8018))
 - [W3C XML Encryption](https://www.w3.org/TR/xmlenc-core1/)
 - [W3C XML Signature](https://www.w3.org/TR/xmldsig-core1/)
