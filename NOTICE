@@ -1,0 +1,17 @@
+NOTICE
+
+This repository contains only original code and protocol documentation.
+
+It does not contain or redistribute the Nexus Personal SDK, any banking app,
+APK, split APK, decompiled code, activation URL, PIN, seed, profile data, or
+any other user data.
+
+The harness (harness/harness.jar and harness/src/Harness.java) contains only
+the tiny Harness class. At runtime it resolves the Nexus Personal classes from
+the app already installed on the user's own device and delegates the DSKPP
+exchange to them. The files under harness/stubs/ are minimal compile-time API
+declarations; they contain no implementation.
+
+"Nexus Personal" is a product of Nexus Group. Bank and app names are
+trademarks of their respective owners. This project is independent and is not
+affiliated with or endorsed by Nexus Group, YES Bank, or any other bank.

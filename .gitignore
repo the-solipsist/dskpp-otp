@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+harness/build/
+*.otpauth.txt
+*.png
+.ruff_cache/
